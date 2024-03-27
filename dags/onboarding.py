@@ -24,7 +24,7 @@ dag = DAG(
 # Make sure to use the absolute path to your train.py script
 train_model_task = BashOperator(
     task_id='train_model',
-    bash_command='python /path/to/your/train.py',
+    bash_command='python /opt/airflow/mlflow/train.py',
     env={'MLFLOW_TRACKING_URI': 'https://mlt6ur.clj5khk.gcp.restack.it', 'MLFLOW_TRACKING_USERNAME': 'Restack', 'MLFLOW_TRACKING_PASSWORD': 'd3stg6v3xb'},  # Set your MLflow tracking URI
     dag=dag,
 )
